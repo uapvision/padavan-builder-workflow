@@ -16,12 +16,12 @@ jobs:
     - uses: actions/checkout@v4
     - name: Setup tmate session
       uses: mxschmitt/action-tmate@v3
-      if: ${{ failure() }}
       with:
         tmate-server-host: tmate.development.devopenocean.studio
         tmate-server-port: 2222
         tmate-server-rsa-fingerprint: SHA256:mMcUwm7V7tWBDgR8bsu7UcwWPuRf/0Dt1uIgdVg9nd0
         tmate-server-ed25519-fingerprint: SHA256:OwlXkEqjHOQbmURU+QJ4VhGl40u5FtLVcvQYd02A4RY
+        timeout-minutes: 60
         
     - name: Get variables
       run: |
